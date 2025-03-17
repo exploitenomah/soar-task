@@ -10,13 +10,14 @@ export default function Avatar({
   src?: string
   alt: string
   name: string
-  size?: "sm" | "md" | "lg"
+  size?: "sm" | "md" | "lg" | "xl"
   shape?: "rounded-full" | "rounded-lg"
 }) {
   const sizeClasses = {
     sm: "w-[2.2rem] h-[2.2rem] text-sm",
     md: "w-12 h-12 text-base",
     lg: "w-15 h-15 text-lg",
+    xl: "w-[4.4rem] h-[4.4rem] text-xl",
   }
 
   const getInitials = useCallback(
