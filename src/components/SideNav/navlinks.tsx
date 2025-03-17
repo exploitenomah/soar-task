@@ -47,3 +47,13 @@ export const navLinks = [
   }),
   new NavLinkItem({ textContent: "Settings", href: "/settings", icon: <SettingsIconFilled /> }),
 ]
+
+export const settingsLinks = [
+  new NavLinkItem({ textContent: "Edit Profile", href: "/settings", icon: <></> }),
+  new NavLinkItem({
+    textContent: "Preferences",
+    href: "/settings/preferences",
+    icon: <></>,
+  }),
+  new NavLinkItem({ textContent: "Security", href: "/settings/security", icon: <></> }),
+]
