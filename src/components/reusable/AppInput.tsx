@@ -10,7 +10,7 @@ export default function AppInput({
   return (
     <>
       <label className="flex flex-col gap-[11px]">
-        <span>{label}</span>
+        <span className="text-[0.8125rem] md:text-base text-primary-dark">{label}</span>
         <input
           {...inputProps}
           className="border border-solid border-[#DFEAF2] rounded-2xl py-4 px-5 placeholder:text-xs md:placeholder:text-[0.94rem] placeholder:text-primary-dark-blue placeholder:font-normal  text-xs md:text-[0.94rem] text-primary-dark-blue font-normal focus:outline-primary-dark/50"
