@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 export const uiSlice = createSlice({
   name: "counter",
   initialState: {
-    isNavOpen: !false,
+    isNavOpen: false,
   },
   reducers: {
     toggleNavOpen: (state, action: PayloadAction<boolean>) => {

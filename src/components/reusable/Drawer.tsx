@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { ReactNode, useEffect } from "react"
+import RightChevronIcon from "../../assets/icons/RightChevronIcon"
 
 export default function Drawer({
   isOpen,
@@ -28,7 +29,6 @@ export default function Drawer({
       <AnimatePresence>
         {isOpen && (
           <div className="fixed inset-0 flex z-50">
-            {/* Backdrop */}
             {closeOnOutsideClick && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -45,8 +45,9 @@ export default function Drawer({
               transition={{ type: "tween", duration: 0.3 }}
               className={`fixed top-0 ${position}-0 h-full bg-white shadow-lg ${width}`}
             >
-              <button onClick={onClose} className="self-end p-2">
-                X
+              <button onClick={onClose} className="right-3.5 top-3 scale-75 p-2 absolute flex justify-center items-center w-[30px] h-[30px] rounded-full shadow-sm">
+                <RightChevronIcon />
+                <span className="sr-only">Close drawer</span>
               </button>
               <div className="flex-1 overflow-auto">{children}</div>
             </motion.div>
