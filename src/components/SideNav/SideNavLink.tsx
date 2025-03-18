@@ -8,7 +8,7 @@ export default function SideNavLink({ link }: { link: NavLinkItem }) {
   const location = useLocation()
   const isActive = useMemo(
     () =>
-      location.pathname === "/"
+      location.pathname === "/" || link.href === "/"
         ? link.href === location.pathname
         : location.pathname.toLowerCase().startsWith(link.href.toLowerCase()),
     [location.pathname, link.href],
