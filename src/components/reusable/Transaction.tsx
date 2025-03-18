@@ -1,17 +1,17 @@
+import { formatNumToUSD } from "../../_utils"
 
 export default function Transaction({
-  amount,
-  title,
-  date,
-  imgSrc,
-  imgAlt,
+  transaction,
 }: {
-  amount: number
-  title: string
-  date: string
-  imgSrc: string
-  imgAlt: string
+  transaction: {
+    amount: number
+    title: string
+    date: string
+    imgSrc: string
+    imgAlt: string
+  }
 }) {
+  const { amount, title, date, imgSrc, imgAlt } = transaction
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString)
     return new Intl.DateTimeFormat("en-GB", {
@@ -21,18 +21,18 @@ export default function Transaction({
     }).format(date)
   }
   return (
-    <article className="flex items-center gap-[15px] md:gap-[17px]">
+    <article className="flex items-center">
       <img
         src={imgSrc}
         alt={imgAlt}
-        className="object-cover w-[50px] h-[50px] md:w-[55px] md:h-[55px]"
+        className="object-cover w-[50px] h-[50px] md:w-[55px] md:h-[55px] mr-[15px] mr:gap-[17px]"
       />
       <div className="mr-auto">
         <h2 className="text-primary-dark font-medium text-sm md:text-base">{title}</h2>
         <p className="text-primary-dark-blue text-xs md:text-[1.0667rem]">{formatDate(date)}</p>
       </div>
-      <p className={`font-semibold ${amount < 0 ? "text-[#FF4B4A]" : "text-[#41D4A8]"}`}>
-        {amount.toLocaleString("en-US", { style: "currency", currency: "USD" })}
+      <p className={`font-semibold text-[0.6875rem] lg:text-base ${amount < 0 ? "text-[#FF4B4A]" : "text-[#41D4A8]"}`}>
+        {formatNumToUSD(amount)}
       </p>
     </article>
   )
