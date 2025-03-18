@@ -23,7 +23,7 @@ export default function DashboardPage() {
           <ExpenseStatisticsSection />
         </section>
       </main>
-      <section className="lg:grid lg:grid-cols-5 lg:gap-x-6 lg:gap-y-[1.875rem]">
+      <section className="lg:grid lg:grid-cols-5 lg:gap-x-6 lg:gap-y-[1.875rem] mt-[1.875rem] lg:mt-6">
         <section className="col-start-1 col-span-2">
           <QuickTransferSection />
         </section>
