@@ -8,12 +8,12 @@ import WeeklyActivitySection from "../components/dashboard/WeeklyActivitySection
 
 export default function DashboardPage() {
   return (
-    <>
-      <main className="lg:grid lg:grid-cols-3 lg:gap-x-6 lg:gap-y-[1.875rem] lg:grid-rows-2">
+    <div className="pl-[1.5625rem] xl:p-0">
+      <main className="flex flex-col gap-[22px] xl:grid xl:grid-cols-3 xl:gap-x-6 xl:gap-y-[1.875rem] xl:grid-rows-2">
         <section className="col-start-1 col-span-2 row-start-1 row-end-2">
           <CardsSection />
         </section>
-        <section className="col-start-3 col-end-4 row-start-1 row-end-2">
+        <section className="col-start-3 col-end-4 row-start-1 row-end-2 pr-[1.5625rem] xl:pr-0">
           <RecentTransactionsSection />
         </section>
         <section className="col-start-1 col-span-2 row-start-2 row-end-3">
@@ -23,7 +23,7 @@ export default function DashboardPage() {
           <ExpenseStatisticsSection />
         </section>
       </main>
-      <section className="lg:grid lg:grid-cols-5 lg:gap-x-6 lg:gap-y-[1.875rem] mt-[1.875rem] lg:mt-6">
+      <section className="flex flex-col gap-[22px] xl:grid xl:grid-cols-5 xl:gap-x-6 xl:gap-y-[1.875rem] mt-[22px] xl:mt-6">
         <section className="col-start-1 col-span-2">
           <QuickTransferSection />
         </section>
@@ -31,6 +31,6 @@ export default function DashboardPage() {
           <BalanceHistorySection />
         </section>
       </section>
-    </>
+    </div>
   )
 }

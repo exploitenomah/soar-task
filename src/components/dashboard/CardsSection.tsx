@@ -21,7 +21,7 @@ const creditCards = [
 
 export default function CardsSection() {
   return (
-    <div className="flex flex-col gap-y-[1.375rem] lg:gap-5 pl-[1.5625rem] lg:p-0">
+    <div className="flex flex-col gap-y-[1.375rem] lg:gap-5">
       <div className="text-logo-text flex justify-between pr-[1.5625rem] lg:pr-0">
         <SectionHeading>My Cards</SectionHeading>
         <Link
@@ -31,7 +31,7 @@ export default function CardsSection() {
           See all
         </Link>
       </div>
-      <ul className="flex gap-5 lg:gap-[1.875rem] overflow-auto">
+      <ul className="flex gap-5 lg:gap-[1.875rem] overflow-auto pr-4 xl:pr-0">
         {creditCards.map((card) => (
           <li key={card.cardNumber}>
             <CreditCard card={card as CreditCardInterface} />
