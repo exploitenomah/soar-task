@@ -76,6 +76,7 @@ export default function QuickTransferSection() {
           onClick={scrollUsersContainer}
           className="absolute -translate-y-1/2 top-[50%] left-[80%] w-[50px] h-[50px] bg-white flex items-center justify-center rounded-full shadow-[4px_4px_18px_-2px_rgba(231,228,232,0.8)] p-4 cursor-pointer hover:bg-primary-light hover:shadow-[8px_8px_18px_-2px_rgba(231,228,232,0.8)]"
         >
+          <span className="sr-only">Click to scroll right</span>
           <RightChevronIcon />
         </button>
         <div className="mt-[22px] lg:mt-[28px] flex justify-between items-center">
