@@ -4,14 +4,16 @@ export default function Avatar({
   src,
   alt = "User Avatar",
   name,
-  size = "md",
+  size,
   shape = "rounded-full",
+  customSize,
 }: {
   src?: string
   alt: string
   name: string
   size?: "sm" | "md" | "lg" | "xl"
   shape?: "rounded-full" | "rounded-lg"
+  customSize?: string
 }) {
   const sizeClasses = {
     sm: "w-[2.2rem] h-[2.2rem] text-sm",
@@ -35,11 +37,15 @@ export default function Avatar({
   return (
     <span
       className={`relative flex items-center justify-center bg-primary-light text-primary-blue font-semibold ${
-        sizeClasses[size]
+        size ? sizeClasses[size] : customSize
       } ${shape}`}
     >
       {src ? (
-        <img src={src} alt={alt} className={`object-cover ${sizeClasses[size]} ${shape}`} />
+        <img
+          src={src}
+          alt={alt}
+          className={`object-cover ${size ? sizeClasses[size] : customSize} ${shape}`}
+        />
       ) : (
         <span>{getInitials(name)}</span>
       )}
