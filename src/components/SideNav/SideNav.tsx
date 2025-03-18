@@ -27,7 +27,7 @@ export default function SideNav() {
 export function DesktopSideNav() {
   return (
     <>
-      <div className="hidden md:block sticky inset-y-0 border-r-solid border-r border-r-[#E6EFF5] grow shrink-0 min-w-[250px] h-full">
+      <div className="hidden md:block sticky inset-y-0 border-r-solid border-r border-r-[#E6EFF5] w-full shrink-0 max-w-[250px] h-full">
         <SideNav />
       </div>
     </>
