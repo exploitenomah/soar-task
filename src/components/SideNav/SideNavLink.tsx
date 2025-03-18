@@ -10,7 +10,7 @@ export default function SideNavLink({ link }: { link: NavLinkItem }) {
     () =>
       location.pathname === "/"
         ? link.href === location.pathname
-        : link.href.toLowerCase().startsWith(location.pathname.toLowerCase()),
+        : location.pathname.toLowerCase().startsWith(link.href.toLowerCase()),
     [location.pathname, link.href],
   )
   const { isNavOpen } = useAppSelector((store) => store.ui)
