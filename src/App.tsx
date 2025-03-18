@@ -3,6 +3,7 @@ import MainLayout from "./layouts/MainLayout"
 import SettingsLayout from "./layouts/SettingsLayout"
 import DashboardPage from "./pages/Dashboard"
 import ProfileSettings from "./pages/ProfileSettings"
+import { ToastContainer } from "react-toastify"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+      <ToastContainer />
     </>
   )
 }
