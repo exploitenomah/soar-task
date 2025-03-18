@@ -7,8 +7,11 @@ import { toggleNavOpen } from "../../redux/slices/ui.slice"
 export default function SideNavLink({ link }: { link: NavLinkItem }) {
   const location = useLocation()
   const isActive = useMemo(
-    () => location.pathname.toLowerCase().startsWith(link.href.toLowerCase()),
-    [location.pathname],
+    () =>
+      location.pathname === "/" || link.href === "/"
+        ? link.href === location.pathname
+        : location.pathname.toLowerCase().startsWith(link.href.toLowerCase()),
+    [location.pathname, link.href],
   )
   const { isNavOpen } = useAppSelector((store) => store.ui)
   const dispatch = useAppDispatch()
