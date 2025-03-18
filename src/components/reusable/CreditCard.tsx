@@ -1,62 +1,64 @@
 import { ReactNode } from "react"
 import CardChipIcon from "../../assets/icons/CardChipIcon"
 import CardCircleIcons from "../../assets/icons/CardCircleIcons"
+import { formatNumToUSD, formatValidThru, maskCardNumber } from "../../_utils"
 
-export default function CreditCard({
-  balance,
-  cardHolder,
-  expiry,
-  cardNumber,
-  theme,
-}: {
-  balance: string
+export interface CreditCardInterface {
+  balance: number
   cardHolder: string
   expiry: string
   cardNumber: string
   theme: "light" | "dark"
-}) {
+}
+
+export default function CreditCard({ card }: { card: CreditCardInterface }) {
+  const { balance, cardHolder, expiry, cardNumber, theme } = card
   const isDarkTheme = theme === "dark"
 
   return (
     <article
-      className={`font-lato rounded-[25px] w-[265px] md:w-[350px] ${
+      className={`font-lato rounded-[15px] lg:rounded-[25px] w-[265px] lg:w-[350px] ${
         !isDarkTheme
           ? "bg-white border border-[#DFEAF2] text-black"
           : "bg-[linear-gradient(107.38deg,#5B5A6F_2.61%,#000000_101.2%)] text-white"
       }`}
     >
-      <header className="flex justify-between mb-[33px] items-center pt-6 px-[1.65rem]">
+      <header className="flex justify-between mb-[1.4375rem] lg:mb-[33px] items-center pt-[17px] lg:pt-6 px-[1.65rem]">
         <div>
           <h2
-            className={`text-[0.7rem] md:text-[0.75rem] ${isDarkTheme ? "text-white" : "text-primary-dark-blue"}`}
+            className={`text-[0.7rem] lg:text-[0.75rem] ${isDarkTheme ? "text-white" : "text-primary-dark-blue"}`}
           >
             Balance
           </h2>
           <p
-            className={`leading-[100%] text-base md:text-xl font-semibold ${isDarkTheme ? "text-white" : "text-logo-text"}`}
+            className={`leading-[100%] text-base lg:text-xl font-semibold ${isDarkTheme ? "text-white" : "text-logo-text"}`}
           >
-            {balance}
+            {formatNumToUSD(balance)}
           </p>
         </div>
         <CardChipIcon variant={isDarkTheme ? "light" : "dark"} />
       </header>
 
-      <div className="pl-[1.65rem] mb-[35px] flex items-start justify-between max-w-[227px]">
+      <div className="pl-[1.65rem] mb-4 lg:mb-[35px] flex items-start justify-between max-w-[227px]">
         <CardDetailKeyValue keyName="Card Holder" value={cardHolder} isDarkTheme={isDarkTheme} />
-        <CardDetailKeyValue keyName="Valid Thru" value={expiry} isDarkTheme={isDarkTheme} />
+        <CardDetailKeyValue
+          keyName="Valid Thru"
+          value={formatValidThru(expiry)}
+          isDarkTheme={isDarkTheme}
+        />
       </div>
 
       <footer
-        className={`py-5 pl-[1.625rem] pr-6 flex justify-between items-center ${
+        className={`py-4 lg:py-5 pl-[1.625rem] pr-6 flex justify-between items-center ${
           theme === "light"
             ? "border-t border-[#DFEAF2] text-[#9199AF80]"
             : "bg-gradient-to-b from-white/15 to-white/0 text-white/50"
         }`}
       >
         <p
-          className={`leading-[100%] text-[0.95rem] md:text-[1.375rem] ${isDarkTheme ? "text-white" : "text-logo-text"}`}
+          className={`leading-[100%] text-[0.95rem] lg:text-[1.375rem] ${isDarkTheme ? "text-white" : "text-logo-text"}`}
         >
-          {cardNumber}
+          {maskCardNumber(cardNumber)}
         </p>
         <CardCircleIcons />
       </footer>
@@ -76,12 +78,12 @@ function CardDetailKeyValue({
   return (
     <section>
       <p
-        className={`leading-[100%] text-[0.65rem] md:text-xs uppercase font-normal ${isDarkTheme ? "text-white/70" : "text-primary-dark-blue"}`}
+        className={`leading-[100%] text-[0.65rem] lg:text-xs uppercase font-normal ${isDarkTheme ? "text-white/70" : "text-primary-dark-blue"}`}
       >
         {keyName}
       </p>
       <p
-        className={`text-[0.8rem] md:text-[0.95rem] font-semibold ${isDarkTheme ? "text-white" : "text-logo-text"}`}
+        className={`text-[0.8rem] lg:text-[0.95rem] font-semibold ${isDarkTheme ? "text-white" : "text-logo-text"}`}
       >
         {value}
       </p>
