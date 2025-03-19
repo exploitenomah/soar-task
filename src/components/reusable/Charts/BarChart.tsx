@@ -71,7 +71,7 @@ export default function BarChart({
         .attr("x2", containerWidth - margin.right)
         .attr("y1", (d) => yScale(d))
         .attr("y2", (d) => yScale(d))
-        .attr("stroke", "#F3F3F5")
+        .attr("stroke", "#DFE5EE")
         .attr("stroke-width", 1)
       svg
         .append("g")
