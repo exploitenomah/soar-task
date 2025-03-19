@@ -16,7 +16,7 @@ export default function WeeklyActivitySection({}: {}) {
           data={[]}
           xAxisKey={"day"}
           barsKeys={["withdraw", "deposit"]}
-          colors={{ deposit: "#396AFF", withdraw: "#1C1C1C" }}
+          colors={{ deposit: "#396AFF", withdraw: "#232323" }}
         />
       </div>
     </div>
