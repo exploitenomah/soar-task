@@ -1,16 +1,18 @@
 import * as d3 from "d3"
 import { useRef, useEffect } from "react"
 
-type PieObjectData = { [x: string]: string | number, color: string }
+type PieObjectData = { [x: string]: string | number; color: string }
 
 export default function PieChart({
   data,
   percentageKey,
-  textKey
+  textKey,
+  width = 280,
 }: {
   data: PieObjectData[]
   percentageKey: keyof PieObjectData
   textKey: keyof PieObjectData
+  width?: number
 }) {
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -20,12 +22,12 @@ export default function PieChart({
     if (!svgRef.current || !containerRef.current) return
 
     const updateChart = () => {
-      const containerWidth = (containerRef.current?.clientWidth || 280) - 16
+      const containerWidth = (containerRef.current?.clientWidth || width) - 16
       const isMobile = containerWidth <= 400
 
-      const width = containerWidth
-      const height = containerWidth
-      const radius = (Math.min(width, height) / 2) * 0.85
+      const pieWidth = containerWidth
+      const pieHeight = containerWidth
+      const radius = (Math.min(pieWidth, pieHeight) / 2) * 0.85
 
       const desiredGap = isMobile ? 6.4 : 8.5
       const padAngle = (desiredGap / radius) * 1.5
@@ -44,15 +46,15 @@ export default function PieChart({
         .innerRadius(6)
         .outerRadius((d) => {
           const calculatedRadius = radius - Number(d.data.idx) * 5
-          return d.data[percentageKey] as number < 20
-            ? (radius * 19) / Number(d.data[percentageKey]) as number
+          return (d.data[percentageKey] as number) < 20
+            ? (((radius * 19) / Number(d.data[percentageKey])) as number)
             : calculatedRadius + (isMobile ? 8 : 50)
         })
         .cornerRadius(4)
 
-      svg.attr("width", width).attr("height", height).attr("viewBox", `0 0 ${width} ${height}`)
+      svg.attr("width", width).attr("height", pieHeight).attr("viewBox", `0 0 ${width} ${pieHeight}`)
 
-      const g = svg.append("g").attr("transform", `translate(${width / 2},${height / 2})`)
+      const g = svg.append("g").attr("transform", `translate(${width / 2},${pieHeight / 2})`)
 
       g.selectAll("path")
         .data(pie(pieDataWithIdxKey))
@@ -130,7 +132,7 @@ export default function PieChart({
             .text(`${d.data[percentageKey]}%`)
         })
         .transition()
-        .delay(500) 
+        .delay(500)
         .duration(500)
         .ease(d3.easeQuadOut)
         .style("opacity", 1)
