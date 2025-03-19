@@ -1,6 +1,9 @@
 import { Outlet, useLocation } from "react-router"
 import { MobileSideNav, DesktopSideNav } from "../components/SideNav/SideNav"
 import AppHeader from "../components/Header"
+import { useEffect } from "react"
+import { useAppDispatch, useAppSelector } from "../redux/hooks"
+import { fetchUserData } from "../redux/slices/user.slice"
 
 const pageTitles = {
   "/": "Overview",
@@ -19,6 +22,11 @@ const pageTitles = {
 export default function MainLayout() {
   const location = useLocation()
   const heading = pageTitles[location.pathname as keyof typeof pageTitles] || "Dashboard"
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchUserData())
+  }, [dispatch])
 
   return (
     <div className="relative h-screen flex ">
