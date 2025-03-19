@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 import RightChevronIcon from "../../assets/icons/RightChevronIcon"
 import SectionHeading from "../reusable/SectionHeading"
 import UserCard from "../reusable/UserCard"
@@ -44,12 +44,12 @@ const users = [
 ]
 
 export default function QuickTransferSection() {
-  const [selectedRecipient, setSelectedRecipient] = useState<any>(null)
+  const [selectedRecipient, setSelectedRecipient] = useState<(typeof users)[0] | null>(null)
   const usersContainerRef = useRef<HTMLDivElement | null>(null)
 
-  const scrollUsersContainer = () => {
+  const scrollUsersContainer = useCallback(() => {
     usersContainerRef.current?.scrollBy({ left: 150, behavior: "smooth" })
-  }
+  }, [usersContainerRef])
 
   return (
     <div className="flex flex-col gap-y-[1.375rem] lg:gap-5 relative">
