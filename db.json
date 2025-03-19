@@ -1,0 +1,178 @@
+{
+  "user": {
+    "name": "Eddy Cusuma",
+    "username": "eddycusuma25",
+    "email": "samuri@xcode.com",
+    "dob": "03/04/2025",
+    "presentAddress": "San Jose, California, USA",
+    "permanentAddress": "San Jose, California, USA",
+    "city": "San Jose, California, USA",
+    "state": "",
+    "postalCode": "45962",
+    "country": "USA",
+    "password": "iujnicjnEEOI!383"
+  },
+  "cards": [
+    {
+      "id": "1",
+      "balance": 5756,
+      "cardHolder": "Eddy Cusuma",
+      "expiry": "12/22",
+      "cardNumber": "3778123412341234"
+    },
+    {
+      "id": "2",
+      "balance": 3240,
+      "cardHolder": "Eddy Cusuma",
+      "expiry": "06/24",
+      "cardNumber": "4556334411223344"
+    },
+    {
+      "id": "3",
+      "balance": 8921,
+      "cardHolder": "Eddy Cusuma",
+      "expiry": "09/25",
+      "cardNumber": "6011122233334444"
+    },
+    {
+      "id": "4",
+      "balance": 1234,
+      "cardHolder": "Eddy Cusuma",
+      "expiry": "03/26",
+      "cardNumber": "378282246310005"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "title": "Deposit from my Card",
+      "date": "28 January 2021",
+      "amount": -850,
+      "image": "/images/",
+      "type": "deposit"
+    },
+    {
+      "id": "2",
+      "title": "Deposit Paypal",
+      "date": "25 January 2021",
+      "amount": 2500,
+      "image": "/images/",
+      "type": "paypal"
+    },
+    {
+      "id": "3",
+      "title": "Jemi Wilson",
+      "date": "21 January 2021",
+      "amount": 5400,
+      "image": "/images/",
+      "type": "credit"
+    }
+  ],
+  "weeklyActivity": [
+    {
+      "day": "Sat",
+      "deposit": 100,
+      "withdraw": 500,
+      "id": "fb18"
+    },
+    {
+      "day": "Sun",
+      "deposit": 200,
+      "withdraw": 350,
+      "id": "22f3"
+    },
+    {
+      "day": "Mon",
+      "deposit": 150,
+      "withdraw": 450,
+      "id": "21bb"
+    },
+    {
+      "day": "Tue",
+      "deposit": 300,
+      "withdraw": 500,
+      "id": "8399"
+    },
+    {
+      "day": "Wed",
+      "deposit": 250,
+      "withdraw": 400,
+      "id": "c0a3"
+    },
+    {
+      "day": "Thu",
+      "deposit": 200,
+      "withdraw": 300,
+      "id": "bd0e"
+    },
+    {
+      "day": "Fri",
+      "deposit": 100,
+      "withdraw": 200,
+      "id": "01aa"
+    }
+  ],
+  "expenseStatistics": {
+    "entertainment": 30,
+    "billExpense": 15,
+    "investment": 20,
+    "others": 35
+  },
+  "savedBeneficiaries": [
+    {
+      "id": "1",
+      "name": "Livia Bator",
+      "role": "CEO",
+      "image": "/images/LiviaBator.png"
+    },
+    {
+      "id": "2",
+      "name": "Randy Press",
+      "role": "Director",
+      "image": "/images/RandyPress.png"
+    },
+    {
+      "id": "3",
+      "name": "Workman",
+      "role": "Designer",
+      "image": "/images/Workman.png"
+    }
+  ],
+  "balanceHistory": [
+    {
+      "month": "Jul",
+      "balance": 200,
+      "id": "d662"
+    },
+    {
+      "month": "Aug",
+      "balance": 400,
+      "id": "e876"
+    },
+    {
+      "month": "Sep",
+      "balance": 600,
+      "id": "02a8"
+    },
+    {
+      "month": "Oct",
+      "balance": 800,
+      "id": "d1ad"
+    },
+    {
+      "month": "Nov",
+      "balance": 700,
+      "id": "12a7"
+    },
+    {
+      "month": "Dec",
+      "balance": 500,
+      "id": "5b16"
+    },
+    {
+      "month": "Jan",
+      "balance": 600,
+      "id": "5b03"
+    }
+  ]
+}

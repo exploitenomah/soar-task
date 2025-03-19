@@ -21,6 +21,7 @@
     "@tailwindcss/vite": "^4.0.14",
     "@vitejs/plugin-legacy": "^6.0.2",
     "d3": "^7.9.0",
+    "formik": "^2.4.6",
     "framer-motion": "^12.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
