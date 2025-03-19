@@ -201,17 +201,14 @@ export default function BarChart({
       }
     }
 
-    // Initial render
     updateChart()
 
-    // Add resize listener
     const resizeObserver = new ResizeObserver(() => {
       updateChart()
     })
 
     resizeObserver.observe(containerRef.current)
 
-    // Cleanup
     return () => {
       resizeObserver.disconnect()
     }
