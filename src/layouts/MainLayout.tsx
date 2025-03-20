@@ -2,8 +2,17 @@ import { Outlet, useLocation } from "react-router"
 import { MobileSideNav, DesktopSideNav } from "../components/SideNav/SideNav"
 import AppHeader from "../components/Header"
 import { useEffect } from "react"
-import { useAppDispatch, useAppSelector } from "../redux/hooks"
+import { useAppDispatch } from "../redux/hooks"
 import { fetchUserData } from "../redux/slices/user.slice"
+import {
+  fetchCards,
+  fetchRecentTransactions,
+  fetchWeeklyStats,
+  fetchExpensesStats,
+  fetchSavedBeneficiaries,
+  fetchBalanceHistory,
+} from "../redux/thunks/dashboard.thunk"
+import { endLoading } from "../redux/slices/dashboard.slice"
 
 const pageTitles = {
   "/": "Overview",
@@ -26,6 +35,21 @@ export default function MainLayout() {
 
   useEffect(() => {
     dispatch(fetchUserData())
+  }, [dispatch])
+
+  useEffect(() => {
+    ;(async () => {
+      return Promise.all([
+        dispatch(fetchCards()),
+        dispatch(fetchRecentTransactions()),
+        dispatch(fetchWeeklyStats()),
+        dispatch(fetchExpensesStats()),
+        dispatch(fetchSavedBeneficiaries()),
+        dispatch(fetchBalanceHistory()),
+      ])
+    })().then(() => {
+      dispatch(endLoading())
+    })
   }, [dispatch])
 
   return (
