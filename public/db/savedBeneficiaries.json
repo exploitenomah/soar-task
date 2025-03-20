@@ -1,0 +1,24 @@
+
+
+{
+   "savedBeneficiaries": [
+    {
+      "id": "1",
+      "name": "Livia Bator",
+      "occupation": "CEO",
+      "profileImage": "/images/LiviaBator.png"
+    },
+    {
+      "id": "2",
+      "name": "Randy Press",
+      "occupation": "Director",
+      "profileImage": "/images/RandyPress.png"
+    },
+    {
+      "id": "3",
+      "name": "Workman",
+      "occupation": "Designer",
+      "profileImage": "/images/Workman.png"
+    }
+  ]
+}

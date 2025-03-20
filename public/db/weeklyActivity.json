@@ -1,0 +1,47 @@
+
+{
+  "weeklyActivity": [
+    {
+      "day": "Sat",
+      "deposit": 100,
+      "withdraw": 500,
+      "id": "fb18"
+    },
+    {
+      "day": "Sun",
+      "deposit": 200,
+      "withdraw": 350,
+      "id": "22f3"
+    },
+    {
+      "day": "Mon",
+      "deposit": 150,
+      "withdraw": 450,
+      "id": "21bb"
+    },
+    {
+      "day": "Tue",
+      "deposit": 300,
+      "withdraw": 500,
+      "id": "8399"
+    },
+    {
+      "day": "Wed",
+      "deposit": 250,
+      "withdraw": 400,
+      "id": "c0a3"
+    },
+    {
+      "day": "Thu",
+      "deposit": 200,
+      "withdraw": 300,
+      "id": "bd0e"
+    },
+    {
+      "day": "Fri",
+      "deposit": 100,
+      "withdraw": 200,
+      "id": "01aa"
+    }
+  ]
+}

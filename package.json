@@ -3,11 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev": "concurrently \"vite\" \"json-server --watch db.json --port 5000\"",
+    "dev": "vite",
     "json-server": "json-server --watch db.json --port 5000"
   },
   "lint-staged": {
@@ -43,7 +44,6 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "husky": "^9.1.7",
-    "json-server": "^1.0.0-beta.3",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "typescript": "~5.7.2",
