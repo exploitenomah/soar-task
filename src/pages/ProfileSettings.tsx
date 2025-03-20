@@ -128,6 +128,7 @@ export default function ProfileSettings() {
                   onChange={(file) => {
                     setFieldValue("profileImage", file)
                   }}
+                  name={values.name}
                 />
               </div>
               <div className="w-full">
