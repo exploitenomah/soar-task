@@ -84,11 +84,6 @@ soar/
    npm run dev
    ```
 
-4. Start the JSON server (for API):
-   ```bash
-   npm run json-server
-   ```
-
 ## 📱 Mobile Responsiveness
 
 The dashboard is fully responsive with three main breakpoints:
