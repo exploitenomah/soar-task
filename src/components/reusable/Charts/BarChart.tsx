@@ -22,8 +22,9 @@ export default function BarChart({
 
   useEffect(() => {
     if (!svgRef.current || !containerRef.current) return
-
+    
     const updateChart = () => {
+      const isMobile = window.innerWidth <= 600
       const containerWidth = containerRef.current?.clientWidth || width
       const containerHeight = Math.min(height, containerWidth * 0.6)
 
@@ -114,7 +115,6 @@ export default function BarChart({
         .style("z-index", "10")
         .style("transform", "translate(-50%, -100%)")
         .style("white-space", "nowrap")
-
       const bars = barsKeys.map((barKey, idx) => ({
         barKey,
         bar: svg
@@ -123,7 +123,12 @@ export default function BarChart({
           .enter()
           .append("rect")
           .attr("class", `bar ${barKey}`)
-          .attr("x", (d) => (xScale(d[xAxisKey] as string) ?? 0) + barWidth + 20 * idx)
+          .attr(
+            "x",
+            (d) =>
+              (xScale(d[xAxisKey] as string) ?? 0) + barWidth + (isMobile ? 10 * idx : 20 * idx),
+            //  (xScale(d[xAxisKey] as string) ?? 0) + barWidth + (!isMobile ? -100 : 20 * idx),
+          )
           .attr("y", containerHeight - margin.bottom)
           .attr("width", barWidth)
           .attr("height", 0)
