@@ -71,7 +71,7 @@ soar/
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone [Repository URL](https://github.com/exploitenomah/soar-task.git)
    ```
 
 2. Install dependencies:
