@@ -13,35 +13,4 @@ export default defineConfig({
       additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
     }),
   ],
-  build: {
-    commonjsOptions: {
-      include: [/node_modules/],
-      transformMixedEsModules: true,
-    },
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ["node_modules"],
-          react: ["react", "react-dom", "react-router"],
-          redux: ["@reduxjs/toolkit", "react-redux"],
-          utils: ["formik", "yup", "d3"],
-        },
-      },
-    },
-  },
-  optimizeDeps: {
-    include: [
-      "react",
-      "react-dom",
-      "react-router",
-      "@reduxjs/toolkit",
-      "react-redux",
-      "formik",
-      "yup",
-      "d3",
-    ],
-    esbuildOptions: {
-      target: "es2020",
-    },
-  },
 })
