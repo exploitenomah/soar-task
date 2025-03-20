@@ -3,48 +3,13 @@ import RightChevronIcon from "../../assets/icons/RightChevronIcon"
 import SectionHeading from "../reusable/SectionHeading"
 import UserCard from "../reusable/UserCard"
 import SendIcon from "../../assets/icons/SendIcon"
-
-const users = [
-  {
-    id: "1",
-    profileImage: "https://randomuser.me/api/portraits/men/1.jpg",
-    name: "Livia Bator",
-    occupation: "CEO",
-  },
-  {
-    id: "2",
-    profileImage: "https://randomuser.me/api/portraits/women/2.jpg",
-    name: "Randy Press",
-    occupation: "Director",
-  },
-  {
-    id: "3",
-    profileImage: "https://randomuser.me/api/portraits/men/3.jpg",
-    name: "Workman",
-    occupation: "Designer",
-  },
-  {
-    id: "4",
-    profileImage: "https://randomuser.me/api/portraits/women/4.jpg",
-    name: "Emily Chen",
-    occupation: "Marketing Specialist",
-  },
-  {
-    id: "5",
-    profileImage: "https://randomuser.me/api/portraits/men/5.jpg",
-    name: "James Brown",
-    occupation: "Data Scientist",
-  },
-  {
-    id: "6",
-    profileImage: "https://randomuser.me/api/portraits/women/6.jpg",
-    name: "Sophia Martinez",
-    occupation: "UX Designer",
-  },
-]
+import { useAppSelector } from "../../redux/hooks"
+import { Beneficiary } from "../../redux/slices/dashboard.slice"
 
 export default function QuickTransferSection() {
-  const [selectedRecipient, setSelectedRecipient] = useState<(typeof users)[0] | null>(null)
+  const { savedBeneficiaries } = useAppSelector((store) => store.dashboard)
+
+  const [selectedRecipient, setSelectedRecipient] = useState<Beneficiary | null>(null)
   const usersContainerRef = useRef<HTMLDivElement | null>(null)
 
   const scrollUsersContainer = useCallback(() => {
@@ -60,7 +25,7 @@ export default function QuickTransferSection() {
           ref={usersContainerRef}
           className="relative overflow-auto w-[80%] lg:max-h-[235px] flex gap-5 lg:gap-[2.0625rem]"
         >
-          {users.map((user) => (
+          {savedBeneficiaries.map((user) => (
             <label key={user.id} className="shrink-0 cursor-pointer">
               <UserCard user={user} isSelected={selectedRecipient?.id === user.id} />
               <input

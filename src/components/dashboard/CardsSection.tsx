@@ -1,25 +1,11 @@
 import { Link } from "react-router"
 import SectionHeading from "../reusable/SectionHeading"
 import CreditCard, { CreditCardInterface } from "../reusable/CreditCard"
-
-const creditCards = [
-  {
-    balance: 3678.2,
-    cardHolder: "Exploit Enomah",
-    expiry: "2025-09-01",
-    cardNumber: "5500000000005678",
-    theme: "dark",
-  },
-  {
-    balance: 520.9,
-    cardHolder: "Exploit Enomah",
-    expiry: "2027-06-01",
-    cardNumber: "3400000000009012",
-    theme: "light",
-  }
-]
+import { useAppSelector } from "../../redux/hooks"
 
 export default function CardsSection() {
+  const { cards } = useAppSelector((store) => store.dashboard)
+
   return (
     <div className="flex flex-col gap-y-[1.375rem] lg:gap-5">
       <div className="text-logo-text flex justify-between pr-[1.5625rem] lg:pr-0">
@@ -32,7 +18,7 @@ export default function CardsSection() {
         </Link>
       </div>
       <ul className="flex gap-5 lg:gap-[1.875rem] overflow-auto pr-4 xl:pr-0">
-        {creditCards.map((card) => (
+        {cards.map((card) => (
           <li key={card.cardNumber}>
             <CreditCard card={card as CreditCardInterface} />
           </li>
