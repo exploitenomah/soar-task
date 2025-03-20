@@ -11,7 +11,7 @@ export default function CardsSection() {
       <div className="text-logo-text flex justify-between pr-[1.5625rem] lg:pr-0">
         <SectionHeading>My Cards</SectionHeading>
         <Link
-          to="/credit-cards"
+          to="#"
           className="capitalize text-sm md:text-[1.0625rem] font-semibold leading-[100%] hover:underline"
         >
           See all
