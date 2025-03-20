@@ -1,7 +1,7 @@
 import * as d3 from "d3"
 import { useRef, useEffect } from "react"
+import { PieObjectData } from "../../../redux/slices/dashboard.slice"
 
-type PieObjectData = { [x: string]: string | number; color: string }
 
 export default function PieChart({
   data,
@@ -153,7 +153,7 @@ export default function PieChart({
 
   return (
     <div ref={containerRef} className="w-full">
-      <svg ref={svgRef}></svg>
+      <svg ref={svgRef} className="overflow-visible"></svg>
     </div>
   )
 }

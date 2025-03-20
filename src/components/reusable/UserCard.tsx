@@ -1,15 +1,11 @@
+import { Beneficiary } from "../../redux/slices/dashboard.slice"
 import Avatar from "./Avatar"
 
 export default function UserCard({
   user,
   isSelected,
 }: {
-  user: {
-    profileImage: string
-    occupation: string
-    name: string
-    id: string
-  }
+  user: Beneficiary
   isSelected?: boolean
 }) {
   const { profileImage, name, occupation } = user
