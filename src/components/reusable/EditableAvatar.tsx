@@ -7,10 +7,12 @@ export default function EditableAvatar({
   onChange,
   fileSizeLimit = 5 * 1024 * 1024,
   existingImageSrc,
+  name
 }: {
   onChange: (file: File) => void
   fileSizeLimit?: number
   existingImageSrc?: string
+  name: string
 }) {
   const [imagePreview, setImagePreview] = useState<string | null>(null)
   const toastOptions = { closeButton: true, autoClose: 3000, theme: "dark" }
@@ -40,7 +42,7 @@ export default function EditableAvatar({
       <div className="relative z-40">
         <Avatar
           alt={""}
-          name={"Eli Quame"}
+          name={name}
           customSize="w-[6.25rem] h-[6.25rem] md:w-[5.625rem] md:h-[5.625rem] text-xl"
           src={imagePreview ? imagePreview : existingImageSrc}
         />
