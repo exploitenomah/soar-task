@@ -38,7 +38,7 @@ export default function DashboardPage() {
           <section className="flex-grow pr-[1.5625rem] xl:pr-0 xl:col-start-1 xl:col-span-2">
             <WeeklyActivitySection />
           </section>
-          <section className="pr-[1.5625rem] xl:pr-0 xl:col-start-3 xl:col-end-4">
+          <section className="pr-[1.5625rem] xl:pr-0 xl:col-start-3 xl:col-end-4 h-full">
             <ExpenseStatisticsSection />
           </section>
         </div>
