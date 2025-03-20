@@ -80,7 +80,7 @@ export default function ProfileSettings() {
   const { data: userData, loading, error } = useAppSelector((state) => state.user)
 
   const handleSubmit = useCallback(
-    async (values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
+    (values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
       try {
         setSubmitting(true)
         const updateData: Partial<UserData> = {
@@ -96,7 +96,7 @@ export default function ProfileSettings() {
           country: values.country,
           password: values.password,
         }
-        const result = await dispatch(updateUserData(updateData)).unwrap()
+        const result = dispatch(updateUserData(updateData as UserData))
         if (result) toast.success("Profile updated successfully!")
       } catch (error) {
         console.error("Error updating profile:", error)
@@ -104,7 +104,6 @@ export default function ProfileSettings() {
       } finally {
         setSubmitting(false)
       }
-      return false
     },
     [dispatch],
   )

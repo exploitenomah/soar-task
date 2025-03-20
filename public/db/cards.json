@@ -1,0 +1,36 @@
+{
+  "cards": [
+    {
+      "id": "1",
+      "balance": 5756,
+      "cardHolder": "Eddy Cusuma",
+      "expiry": "12/22",
+      "cardNumber": "3778123412341234",
+      "theme": "dark"
+    },
+    {
+      "id": "2",
+      "balance": 3240,
+      "cardHolder": "Eddy Cusuma",
+      "expiry": "06/24",
+      "cardNumber": "4556334411223344",
+      "theme": "light"
+    },
+    {
+      "id": "3",
+      "balance": 8921,
+      "cardHolder": "Eddy Cusuma",
+      "expiry": "09/25",
+      "cardNumber": "6011122233334444",
+      "theme": "dark"
+    },
+    {
+      "id": "4",
+      "balance": 1234,
+      "cardHolder": "Eddy Cusuma",
+      "expiry": "03/26",
+      "cardNumber": "3782822463100059",
+      "theme": "light"
+    }
+  ]
+}

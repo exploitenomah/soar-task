@@ -52,6 +52,7 @@ export default function MainLayout() {
         dispatch(endLoading())
       })
       .catch((err) => {
+        console.log("error", err)
         dispatch(setError(err.message))
       })
   }, [dispatch])

@@ -32,34 +32,13 @@ export const fetchUserData = createAsyncThunk(
   "user/fetchUserData",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://localhost:5000/user")
+      const response = await fetch("/db/user.json")
       if (!response.ok) {
         throw new Error("Failed to fetch user data")
       }
-      return await response.json()
+      return (await response.json()).user
     } catch (error) {
       return rejectWithValue(error instanceof Error ? error.message : "Failed to fetch user data")
-    }
-  },
-)
-
-export const updateUserData = createAsyncThunk(
-  "user/updateUserData",
-  async (userData: Partial<UserData>, { rejectWithValue }) => {
-    try {
-      const response = await fetch("http://localhost:5000/user", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      })
-      if (!response.ok) {
-        throw new Error("Failed to update user data")
-      }
-      return await response.json()
-    } catch (error) {
-      return rejectWithValue(error instanceof Error ? error.message : "Failed to update user data")
     }
   },
 )
@@ -71,6 +50,9 @@ const userSlice = createSlice({
     clearUserData: (state) => {
       state.data = null
       state.error = null
+    },
+    updateUserData: (state, action: PayloadAction<UserData>) => {
+      state.data = action.payload
     },
   },
   extraReducers: (builder) => {
@@ -87,17 +69,8 @@ const userSlice = createSlice({
         state.loading = false
         state.error = action.payload as string
       })
-      .addCase(updateUserData.pending, (state) => {
-        state.error = null
-      })
-      .addCase(updateUserData.fulfilled, (state, action: PayloadAction<UserData>) => {
-        state.data = action.payload
-      })
-      .addCase(updateUserData.rejected, (state, action) => {
-        state.error = action.payload as string
-      })
   },
 })
 
-export const { clearUserData, } = userSlice.actions
+export const { clearUserData, updateUserData } = userSlice.actions
 export default userSlice.reducer

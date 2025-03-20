@@ -1,0 +1,28 @@
+{
+  "expenseStatistics": [
+    {
+      "category": "Entertainment",
+      "percentage": 30,
+      "color": "#343C6A",
+      "id": "2b25"
+    },
+    {
+      "category": "Bill Expense",
+      "percentage": 15,
+      "color": "#FC7900",
+      "id": "551c"
+    },
+    {
+      "category": "Investment",
+      "percentage": 20,
+      "color": "#396AFF",
+      "id": "3d7a"
+    },
+    {
+      "category": "Others",
+      "percentage": 35,
+      "color": "#232323",
+      "id": "5604"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+
+{
+  "balanceHistory": [
+    {
+      "month": "Jul",
+      "balance": 200,
+      "id": "d662"
+    },
+    {
+      "month": "Aug",
+      "balance": 400,
+      "id": "e876"
+    },
+    {
+      "month": "Sep",
+      "balance": 200,
+      "id": "02a8"
+    },
+    {
+      "month": "Oct",
+      "balance": 600,
+      "id": "d1ad"
+    },
+    {
+      "month": "Nov",
+      "balance": 400,
+      "id": "12a7"
+    },
+    {
+      "month": "Dec",
+      "balance": 800,
+      "id": "5b16"
+    },
+    {
+      "month": "Jan",
+      "balance": 400,
+      "id": "5b03"
+    }
+  ]
+}
