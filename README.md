@@ -49,7 +49,7 @@ A modern, responsive banking dashboard built with React and TypeScript. This pro
 ```
 soar/
 ├── src/
-│   ├── components/     # Reusable UI components
+│   ├── components/    # Reusable UI components
 │   ├── pages/         # Page components
 │   ├── layouts/       # Layout components
 │   ├── redux/         # Redux store and slices
@@ -116,8 +116,8 @@ This project was created to demonstrate:
 
 ## 📸 Screenshots
 
-<details>
-<summary>Click to view screenshots</summary>
+<!-- <details>
+<summary>Click to view screenshots</summary> -->
 
 ### Desktop View
 ![Desktop Dashboard](public/screenshots/desktop.png)
