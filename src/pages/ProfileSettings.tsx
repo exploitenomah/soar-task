@@ -237,7 +237,7 @@ export default function ProfileSettings() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex justify-center items-center bg-primary-dark text-white mt-4 lg:mt-[2.5625rem] lg:ml-auto py-[0.6875rem] md:py-[0.875rem] w-full md:max-w-[190px] rounded-[9px] md:rounded-[15px] text-[0.9375rem] md:text-lg font-medium leading-[100%] mb-4 md:mb-[7px] transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-100 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="flex justify-center items-center bg-primary-dark text-white mt-4 lg:mt-[2.5625rem] md:ml-auto py-[0.6875rem] md:py-[0.875rem] w-full md:max-w-[190px] rounded-[9px] md:rounded-[15px] text-[0.9375rem] md:text-lg font-medium leading-[100%] mb-4 md:mb-[7px] transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-100 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? "Saving..." : "Save"}
                 </button>

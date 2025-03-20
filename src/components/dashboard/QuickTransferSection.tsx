@@ -17,10 +17,10 @@ export default function QuickTransferSection() {
   }, [usersContainerRef])
 
   return (
-    <div className="flex flex-col gap-y-[1.375rem] lg:gap-5 relative">
+    <div className="flex flex-col gap-y-[1.375rem] lg:gap-5 relative h-full">
       <SectionHeading>Quick Transfer</SectionHeading>
 
-      <div className="max-h-[195px] md:max-h-[276px] px-[1.125rem] md:px-6 py-5 md:py-[2.1875rem] bg-white rounded-[15px] lg:rounded-[25px]">
+      <div className="px-[1.125rem] md:px-6 py-5 md:py-[2.1875rem] bg-white rounded-[15px] lg:rounded-[25px] flex flex-col">
         <div
           ref={usersContainerRef}
           className="relative overflow-auto w-[80%] lg:max-h-[235px] flex gap-5 lg:gap-[2.0625rem]"
@@ -39,7 +39,7 @@ export default function QuickTransferSection() {
         </div>
         <button
           onClick={scrollUsersContainer}
-          className="absolute -translate-y-1/2 top-[50%] left-[80%] w-[50px] h-[50px] bg-white flex items-center justify-center rounded-full shadow-[4px_4px_18px_-2px_rgba(231,228,232,0.8)] p-4 cursor-pointer hover:bg-primary-light hover:shadow-[8px_8px_18px_-2px_rgba(231,228,232,0.8)]"
+          className="absolute -translate-y-1/2 top-[45%] left-[80%] w-[50px] h-[50px] bg-white flex items-center justify-center rounded-full shadow-[4px_4px_18px_-2px_rgba(231,228,232,0.8)] p-4 cursor-pointer hover:bg-primary-light hover:shadow-[8px_8px_18px_-2px_rgba(231,228,232,0.8)]"
         >
           <span className="sr-only">Click to scroll right</span>
           <RightChevronIcon />
