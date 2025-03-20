@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify"
 
 function App() {
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="sync">
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<DashboardPage />} />
