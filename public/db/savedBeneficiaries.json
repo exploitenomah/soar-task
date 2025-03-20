@@ -19,6 +19,24 @@
       "name": "Workman",
       "occupation": "Designer",
       "profileImage": "/images/Workman.png"
+    },
+    {
+      "id": "4",
+      "name": "Sandy Zeltmann",
+      "occupation": "Baker",
+      "profileImage": "/images/LiviaBator.png"
+    },
+    {
+      "id": "5",
+      "name": "Kim Suresh",
+      "occupation": "Chef",
+      "profileImage": "/images/RandyPress.png"
+    },
+    {
+      "id": "6",
+      "name": "Harry Azubike",
+      "occupation": "Mason",
+      "profileImage": "/images/Workman.png"
     }
   ]
 }
