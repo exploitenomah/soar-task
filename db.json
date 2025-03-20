@@ -137,19 +137,19 @@
     {
       "id": "1",
       "name": "Livia Bator",
-      "role": "CEO",
+      "occupation": "CEO",
       "profileImage": "/images/LiviaBator.png"
     },
     {
       "id": "2",
       "name": "Randy Press",
-      "role": "Director",
+      "occupation": "Director",
       "profileImage": "/images/RandyPress.png"
     },
     {
       "id": "3",
       "name": "Workman",
-      "role": "Designer",
+      "occupation": "Designer",
       "profileImage": "/images/Workman.png"
     }
   ],
