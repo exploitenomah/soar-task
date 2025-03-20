@@ -12,7 +12,7 @@ import {
   fetchSavedBeneficiaries,
   fetchBalanceHistory,
 } from "../redux/thunks/dashboard.thunk"
-import { endLoading } from "../redux/slices/dashboard.slice"
+import { endLoading, setError } from "../redux/slices/dashboard.slice"
 
 const pageTitles = {
   "/": "Overview",
@@ -47,9 +47,13 @@ export default function MainLayout() {
         dispatch(fetchSavedBeneficiaries()),
         dispatch(fetchBalanceHistory()),
       ])
-    })().then(() => {
-      dispatch(endLoading())
-    })
+    })()
+      .then(() => {
+        dispatch(endLoading())
+      })
+      .catch((err) => {
+        dispatch(setError(err.message))
+      })
   }, [dispatch])
 
   return (

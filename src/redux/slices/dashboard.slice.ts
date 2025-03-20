@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import {
   fetchBalanceHistory,
   fetchCards,
@@ -16,6 +16,7 @@ interface DashboardState {
   balanceHistoryStats: DataPoint[]
   savedBeneficiaries: Beneficiary[]
   loading: boolean
+  error: string
 }
 
 const initialState: DashboardState = {
@@ -26,6 +27,7 @@ const initialState: DashboardState = {
   balanceHistoryStats: [],
   savedBeneficiaries: [],
   loading: true,
+  error: "",
 }
 
 export const dashboardSlice = createSlice({
@@ -37,6 +39,12 @@ export const dashboardSlice = createSlice({
     },
     endLoading: (state) => {
       state.loading = false
+    },
+    setError: (state, action: PayloadAction<string>) => {
+      state.error = action.payload
+    },
+    removeError: (state) => {
+      state.error = ""
     },
   },
   extraReducers: (builder) => {
@@ -61,7 +69,7 @@ export const dashboardSlice = createSlice({
   },
 })
 
-export const { startLoading, endLoading } = dashboardSlice.actions
+export const { startLoading, endLoading, setError, removeError } = dashboardSlice.actions
 
 export default dashboardSlice.reducer
 
