@@ -1,5 +1,5 @@
-import { useCallback } from "react"
-import { Formik, Form, FormikHelpers } from "formik"
+import { useCallback, useState } from "react"
+import { Formik, Form } from "formik"
 import * as Yup from "yup"
 import AppInput from "../components/reusable/AppInput"
 import EditableAvatar from "../components/reusable/EditableAvatar"
@@ -76,36 +76,32 @@ const getInitialValues = (userData: UserData | null): FormValues => ({
 })
 
 export default function ProfileSettings() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const dispatch = useAppDispatch()
   const { data: userData, loading, error } = useAppSelector((state) => state.user)
 
   const handleSubmit = useCallback(
-    (values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
-      try {
-        setSubmitting(true)
-        const updateData: Partial<UserData> = {
-          name: values.name,
-          username: values.username,
-          email: values.email,
-          dob: values.dob ? new Date(values.dob).toLocaleDateString("en-GB") : "",
-          presentAddress: values.presentAddress,
-          permanentAddress: values.permanentAddress,
-          city: values.city,
-          state: values.state,
-          postalCode: values.postalCode,
-          country: values.country,
-          password: values.password,
-        }
-        const result = dispatch(updateUserData(updateData as UserData))
-        if (result) toast.success("Profile updated successfully!")
-      } catch (error) {
-        console.error("Error updating profile:", error)
-        toast.error(error instanceof Error ? error.message : "Failed to update profile")
-      } finally {
-        setSubmitting(false)
+    (values: FormValues) => {
+      if (isSubmitting) return
+      setIsSubmitting(true)
+      const updateData: Partial<UserData> = {
+        name: values.name,
+        username: values.username,
+        email: values.email,
+        dob: values.dob ? new Date(values.dob).toLocaleDateString("en-GB") : "",
+        presentAddress: values.presentAddress,
+        permanentAddress: values.permanentAddress,
+        city: values.city,
+        state: values.state,
+        postalCode: values.postalCode,
+        country: values.country,
+        password: values.password,
       }
+      dispatch(updateUserData(updateData as UserData))
+      toast.success("Profile updated successfully!")
+      setIsSubmitting(false)
     },
-    [dispatch],
+    [dispatch, isSubmitting],
   )
 
   return (
@@ -121,7 +117,7 @@ export default function ProfileSettings() {
           onSubmit={handleSubmit}
           enableReinitialize={false}
         >
-          {({ values, handleChange, errors, touched, setFieldValue, isSubmitting }) => (
+          {({ values, handleChange, errors, touched, setFieldValue, isValid }) => (
             <Form className="flex flex-col lg:flex-row gap-[1.375rem] lg:gap-[3.5625rem]">
               <div className="shrink-0 mx-auto lg:mx-0">
                 <EditableAvatar
@@ -236,7 +232,7 @@ export default function ProfileSettings() {
                 </div>
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={!isValid}
                   className="flex justify-center items-center bg-primary-dark text-white mt-4 lg:mt-[2.5625rem] md:ml-auto py-[0.6875rem] md:py-[0.875rem] w-full md:max-w-[190px] rounded-[9px] md:rounded-[15px] text-[0.9375rem] md:text-lg font-medium leading-[100%] mb-4 md:mb-[7px] transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-100 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? "Saving..." : "Save"}
