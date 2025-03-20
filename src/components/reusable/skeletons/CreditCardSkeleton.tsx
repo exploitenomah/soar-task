@@ -13,7 +13,7 @@ export default function CreditCardSkeleton({
 
   return (
     <article
-      className={`font-lato rounded-[15px] lg:rounded-[25px] min-w-[265px] lg:w-[350px] ${
+      className={`font-lato rounded-[15px] lg:rounded-[25px] min-w-[265px] lg:min-w-[350px] ${
         !isDarkTheme
           ? "bg-white border border-[#DFEAF2]"
           : "bg-[linear-gradient(107.38deg,#5B5A6F_2.61%,#000000_101.2%)]"
