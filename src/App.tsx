@@ -4,7 +4,7 @@ import SettingsLayout from "./layouts/SettingsLayout"
 import DashboardPage from "./pages/Dashboard"
 import ProfileSettings from "./pages/ProfileSettings"
 import { ToastContainer } from "react-toastify"
- import { AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
 
 function App() {
   return (

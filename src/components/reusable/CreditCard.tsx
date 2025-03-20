@@ -41,11 +41,7 @@ export default function CreditCard({ card }: { card: CreditCardInterface }) {
 
       <div className="pl-[1.65rem] mb-4 lg:mb-[35px] flex items-start justify-between max-w-[227px]">
         <CardDetailKeyValue keyName="Card Holder" value={cardHolder} isDarkTheme={isDarkTheme} />
-        <CardDetailKeyValue
-          keyName="Valid Thru"
-          value={formatValidThru(expiry)}
-          isDarkTheme={isDarkTheme}
-        />
+        <CardDetailKeyValue keyName="Valid Thru" value={expiry} isDarkTheme={isDarkTheme} />
       </div>
 
       <footer
