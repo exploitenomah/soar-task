@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import CardChipIcon from "../../assets/icons/CardChipIcon"
 import CardCircleIcons from "../../assets/icons/CardCircleIcons"
-import { formatNumToUSD, formatValidThru, maskCardNumber } from "../../_utils"
+import { formatNumToUSD, maskCardNumber } from "../../_utils"
 
 export interface CreditCardInterface {
   balance: number
