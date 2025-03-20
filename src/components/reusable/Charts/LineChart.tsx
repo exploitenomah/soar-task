@@ -1,9 +1,7 @@
 import * as d3 from "d3"
 import { useRef, useEffect } from "react"
+import { DataPoint } from "../../../redux/slices/dashboard.slice"
 
-type DataPoint = {
-  [x: string]: string | number
-}
 
 export default function LineChart({
   data,

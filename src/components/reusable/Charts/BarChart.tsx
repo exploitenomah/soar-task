@@ -1,9 +1,6 @@
 import * as d3 from "d3"
 import { useRef, useEffect } from "react"
-
-type DataPoint = {
-  [x: string]: string | number
-}
+import { DataPoint } from "../../../redux/slices/dashboard.slice"
 
 export default function BarChart({
   width = 700,

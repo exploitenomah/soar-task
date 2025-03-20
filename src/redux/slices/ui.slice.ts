@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 export const uiSlice = createSlice({
-  name: "counter",
+  name: "ui",
   initialState: {
     isNavOpen: false,
   },
