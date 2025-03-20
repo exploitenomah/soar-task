@@ -14,14 +14,34 @@ export default defineConfig({
     }),
   ],
   build: {
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true,
+    },
     rollupOptions: {
       output: {
-        manualChunks(id: any) {
-          if (id.includes("node_modules")) {
-            return id.toString().split("node_modules/")[1].split("/")[0].toString()
-          }
+        manualChunks: {
+          vendor: ["node_modules"],
+          react: ["react", "react-dom", "react-router"],
+          redux: ["@reduxjs/toolkit", "react-redux"],
+          utils: ["formik", "yup", "d3"],
         },
       },
+    },
+  },
+  optimizeDeps: {
+    include: [
+      "react",
+      "react-dom",
+      "react-router",
+      "@reduxjs/toolkit",
+      "react-redux",
+      "formik",
+      "yup",
+      "d3",
+    ],
+    esbuildOptions: {
+      target: "es2020",
     },
   },
 })
