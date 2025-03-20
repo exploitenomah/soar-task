@@ -1,54 +1,135 @@
-# React + TypeScript + Vite
+# Soar Task - Modern Banking Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive banking dashboard built with React and TypeScript. This project demonstrates my ability to create a sophisticated, user-friendly financial interface with real-time data visualization and seamless user interactions.
 
-Currently, two official plugins are available:
+![Dashboard Overview](public/screenshots/desktop.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## Expanding the ESLint configuration
+- [Vercel Deployment](https://soartask2025.vercel.app/)
+- [Netlify Deployment](https://soartask.netlify.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Interactive Dashboard**
+  - Real-time balance tracking
+  - Credit card management
+  - Recent transactions overview
+  - Weekly activity visualization
+  - Expense statistics with pie chart
+  - Quick transfer section
+  - Balance history graph
+
+- **Responsive Design**
+  - Seamless experience across desktop, tablet, and mobile devices
+  - Adaptive layout with optimized viewing on all screen sizes
+  - Touch-friendly interface for mobile users
+
+- **Modern UI/UX**
+  - Clean and intuitive interface
+  - Smooth animations and transitions
+  - Dark and light themed cards
+  - Real-time data updates
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: React 19.0.0
+- **Language**: TypeScript
+- **Build Tool**: Vite 6.2.0
+- **State Management**: Redux Toolkit
+- **Routing**: React Router 7.3.0
+- **Styling**: Tailwind CSS
+- **Data Visualization**: D3.js
+- **Form Handling**: Formik with Yup validation
+- **Animations**: Framer Motion
+- **Notifications**: React Toastify
+
+## 📦 Project Structure
+
+```
+soar/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Page components
+│   ├── layouts/       # Layout components
+│   ├── redux/         # Redux store and slices
+│   ├── assets/        # Static assets
+├── public/
+│   └── screenshots/   # Project screenshots
+└── db/
+    └── balanceHistory.json       # Mock database
+    └── cards.json                # Mock database
+    └── expenseStatistics.json    # Mock database
+    └── savedBeneficiaries.json   # Mock database
+    └── user.json                 # Mock database
+    └── transactions.json         # Mock database
+    └── weeklyActivity.json       # Mock database
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Start the JSON server (for API):
+   ```bash
+   npm run json-server
+   ```
+
+## 📱 Mobile Responsiveness
+
+The dashboard is fully responsive with three main breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1280px
+- Desktop: > 1280px
+
+## 🔒 Security Features
+
+- Secure password validation
+- Protected routes
+- Form validation with Yup
+- Error handling for API requests
+
+## 🤝 Assessment Context
+
+This project was created to demonstrate:
+- Frontend development expertise
+- React and TypeScript proficiency
+- State management capabilities
+- UI/UX design skills
+- Code organization and best practices
+- Responsive design implementation
+- Data visualization abilities
+
+## 📸 Screenshots
+
+<details>
+<summary>Click to view screenshots</summary>
+
+### Desktop View
+![Desktop Dashboard](public/screenshots/desktop.png)
+
+### Tablet View
+![Tablet Dashboard](public/screenshots/tablet.png)
+
+### Mobile View
+![Mobile Dashboard](public/screenshots/mobile.png)
+
+</details>
+
+## 📄 License
+
+This project is created for assessment purposes and is not licensed for public use.
