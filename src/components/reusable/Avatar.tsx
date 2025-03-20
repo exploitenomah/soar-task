@@ -29,7 +29,7 @@ export default function Avatar({
         .map((n) => n[0])
         .join("")
         .toUpperCase()
-        .slice(0, 2) // Max 2 initials
+        .slice(0, 2)
     },
     [name],
   )
